@@ -1,8 +1,0 @@
-{
-  "name": "baxto-tattooist-portfolio",
-  "version": "1.0.0",
-  "description": "Portafolio profesional del estudio Baxto Tattooist",
-  "scripts": {
-    "build": "echo 🧱 Construcción lista para producción"
-  }
-}
