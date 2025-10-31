@@ -1,6 +1,7 @@
 {
   "name": "baxto-tattooist-portfolio",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "homepage": "https://baxtotattooist13-del.github.io/baxto-tattooist-portfolio",
   "scripts": {

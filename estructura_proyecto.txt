@@ -1,0 +1,24 @@
+.
+├── CORRECCIONES.md
+├── README.md
+├── estructura_proyecto.txt
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── src
+│   ├── App.jsx
+│   ├── assets
+│   ├── components
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Gallery.jsx
+│   │   ├── Header.jsx
+│   │   └── Hero.jsx
+│   ├── index.css
+│   └── main.jsx
+├── tailwind.config.js
+└── vite.config.js
+
+3 directories, 18 files
