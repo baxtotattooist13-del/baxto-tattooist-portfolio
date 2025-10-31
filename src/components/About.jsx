@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   const skills = [
-    { name: 'Realismo', level: 95 },
-    { name: 'Tradicional', level: 90 },
-    { name: 'Geométrico', level: 85 },
+    { name: 'Realismo Básico', level: 95 },
+    { name: 'Blackwork', level: 90 },
+    { name: 'Neo-tradicional', level: 85 },
     { name: 'Minimalista', level: 88 },
   ];
 
@@ -45,14 +45,11 @@ const About = () => {
             </h2>
             
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Con más de una década de experiencia en el arte del tatuaje, he dedicado mi vida a perfeccionar 
-              cada trazo y cada diseño. Mi pasión es transformar las ideas de mis clientes en obras de arte 
-              permanentes que cuentan historias únicas.
+Especialista en Realismo básico, Blackwork Neo-tradicional y más. Mi pasión es transformar las ideas de mis clientes en obras de arte permanentes que cuentan historias únicas.
             </p>
             
             <p className="text-gray-400 mb-8 leading-relaxed">
-              Especializado en múltiples estilos, desde el realismo fotográfico hasta diseños minimalistas, 
-              trabajo con dedicación para asegurar que cada tatuaje sea una pieza única que supere las expectativas.
+Cada persona es única y puede convertir su historia en una obra de arte que se lleva en la piel. Trabajo con dedicación para asegurar que cada tatuaje sea una pieza única que supere las expectativas.
             </p>
 
             {/* Skills */}

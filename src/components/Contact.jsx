@@ -27,19 +27,19 @@ const Contact = () => {
     {
       icon: '📧',
       title: 'Email',
-      value: 'baxto@tattooist.com',
-      link: 'mailto:baxto@tattooist.com',
+      value: 'baxto.tattooist@gmail.com',
+      link: 'mailto:baxto.tattooist@gmail.com',
     },
     {
       icon: '📱',
-      title: 'Teléfono',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      title: 'WhatsApp',
+      value: '+52 984 256 2365',
+      link: 'https://wa.me/529842562365',
     },
     {
       icon: '📍',
       title: 'Ubicación',
-      value: 'Ciudad, País',
+      value: 'Playa del Carmen, MX',
       link: '#',
     },
     {
@@ -101,15 +101,17 @@ const Contact = () => {
             <div className="mt-8">
               <p className="text-gray-400 mb-4">Sígueme en redes sociales:</p>
               <div className="flex space-x-4">
-                {['Instagram', 'Facebook', 'Twitter'].map((social) => (
+                {['Instagram', 'Facebook'].map((social) => (
                   <motion.a
                     key={social}
-                    href="#"
+                    href={social === 'Instagram' ? 'https://www.instagram.com/baxto.tattooist' : 'https://www.facebook.com/share/1XfLswuVQP/'}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300"
                   >
-                    {social[0]}
+                    {social === 'Instagram' ? 'IG' : 'FB'}
                   </motion.a>
                 ))}
               </div>
