@@ -1,27 +1,9 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aquí se implementaría la lógica de envío del formulario
-    alert('¡Gracias por tu mensaje! Te contactaré pronto.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
-  };
+  // Nota: Se ha simplificado el componente para usar la acción POST directa de Formspree.
+  // El envío se hará a la dirección de correo del usuario.
+  // Formspree requiere una confirmación por correo la primera vez que se usa.
 
   const contactInfo = [
     {
@@ -119,13 +101,17 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <form onSubmit={handleSubmit} className="space-y-6">
+	          <motion.div
+	            initial={{ opacity: 0, x: 50 }}
+	            whileInView={{ opacity: 1, x: 0 }}
+	            viewport={{ once: true }}
+	            transition={{ duration: 0.8 }}
+	          >
+	            <form 
+	              action="https://formspree.io/f/mrgwzppz" 
+	              method="POST" 
+	              className="space-y-6"
+	            >
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                   Nombre
@@ -133,9 +119,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
+	                  name="Nombre"
                   required
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-white transition-colors duration-300 text-white"
                 />
@@ -148,9 +132,7 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
+	                  name="Email"
                   required
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-white transition-colors duration-300 text-white"
                 />
@@ -163,9 +145,7 @@ const Contact = () => {
                 <input
                   type="tel"
                   id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
+	                  name="Teléfono"
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-white transition-colors duration-300 text-white"
                 />
               </div>
@@ -176,23 +156,22 @@ const Contact = () => {
                 </label>
                 <textarea
                   id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
+	                  name="Mensaje"
                   required
                   rows="4"
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-white transition-colors duration-300 text-white resize-none"
                 ></textarea>
               </div>
 
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full btn-primary"
-              >
-                Enviar Mensaje
-              </motion.button>
+	                <motion.button
+	                type="submit"
+	                whileHover={{ scale: 1.02 }}
+	                whileTap={{ scale: 0.98 }}
+	                className="w-full btn-primary"
+	              >
+	                Enviar Mensaje
+	              </motion.button>
+	              <input type="hidden" name="_subject" value="Nueva Solicitud de Tatuaje desde el Portafolio" />
             </form>
           </motion.div>
         </div>

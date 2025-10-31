@@ -1,0 +1,13 @@
+// Nuevas imágenes subidas por el usuario
+const newTattoos = [
+    { id: 10, category: 'realismo', image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663200928162/ZHorNHudsVJITCam.jpg', title: 'Brújula Acuarela' },
+    { id: 11, category: 'tradicional', image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663200928162/bPZJXeqcmpqHutkv.jpg', title: 'Rosas y Cruz' },
+    { id: 12, category: 'tradicional', image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663200928162/jcMJjcGDeHhFUmHg.jpg', title: 'Rosa y Rosario' },
+    { id: 13, category: 'minimalista', image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663200928162/RHUSzYHkqjFfNTUI.jpg', title: 'Best Buds' },
+    { id: 14, category: 'retrato', image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663200928162/HQYPJvmAcDoYKjMA.jpg', title: 'Retrato de Pareja' },
+    { id: 15, category: 'minimalista', image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663200928162/HPRBsDOzrhplPLEy.jpg', title: 'Diente de León' },
+    { id: 16, category: 'realismo', image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663200928162/fWoeFQWLSdWgjklU.jpg', title: 'Chica Payaso y Rosa' },
+    { id: 17, category: 'minimalista', image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663200928162/udVIpzlkmZqjFDsA.jpg', title: 'Robots de Pareja' },
+    { id: 18, category: 'tradicional', image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663200928162/oKvQVTiSXjcarisN.jpg', title: 'Máscaras de Teatro' },
+    { id: 19, category: 'realismo', image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663200928162/DokJlJhjgAZWPKnZ.jpg', title: 'Manga Completo' },
+];
