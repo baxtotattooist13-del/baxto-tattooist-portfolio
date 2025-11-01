@@ -1,0 +1,406 @@
+/* Estilos Generales y Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-negro: #000000;
+    --color-rojo: #E74C3C;
+    --color-blanco: #FFFFFF;
+    --color-gris-oscuro: #1a1a1a;
+    --color-acento: #FFD700; /* Dorado para acentos */
+}
+
+body {
+    font-family: 'Teko', sans-serif;
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Fondo de ambiente Chicano Gótico */
+    background-image: url('https://i.imgur.com/8Q0y7zF.png'); /* Placeholder para pigmento.png */
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+a {
+    color: var(--color-rojo);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-acento);
+}
+
+h1, h2, h3 {
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 5rem;
+    color: var(--color-blanco);
+    text-shadow: 0 0 10px var(--color-rojo);
+}
+
+h2 {
+    font-size: 3rem;
+    color: var(--color-rojo);
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--color-acento);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+/* Botones de Acción */
+.btn-cita, .btn-resenas {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid var(--color-rojo);
+    border-radius: 5px;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn-cita:hover, .btn-resenas:hover {
+    background-color: var(--color-negro);
+    color: var(--color-rojo);
+    border-color: var(--color-acento);
+    transform: scale(1.05);
+}
+
+/* Lanzadores Flotantes */
+.lanzadores-flotantes {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.flotante {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-negro);
+    border: 2px solid var(--color-acento);
+    border-right: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.flotante:hover {
+    transform: translateX(-10px);
+}
+
+.flotante img {
+    width: 30px;
+    height: 30px;
+}
+
+/* SECCIÓN PRINCIPAL: HEADER */
+.section-presentacion {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.imgur.com/8Q0y7zF.png'); /* Placeholder de fondo */
+    background-size: cover;
+    background-position: center;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--color-rojo);
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px var(--color-rojo);
+}
+
+.subtitulo {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: var(--color-acento);
+}
+
+/* SECCIÓN DE ESTILOS Y UBICACIÓN */
+.section-info {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    background-color: var(--color-gris-oscuro);
+}
+
+.info-bloque {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid var(--color-rojo);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.info-bloque h2 {
+    border-bottom: none;
+    color: var(--color-blanco);
+    font-size: 2rem;
+}
+
+.info-bloque p {
+    font-size: 1.2rem;
+}
+
+/* SECCIÓN CARRUSEL DE TRABAJOS */
+.section-carrusel {
+    background-color: var(--color-negro);
+}
+
+.carrusel-contenedor {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    height: 600px; /* Altura fija para el carrusel */
+    margin-bottom: 20px;
+    border: 5px solid var(--color-rojo);
+    box-shadow: 0 0 30px rgba(231, 76, 60, 0.5);
+}
+
+.carrusel-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.carrusel-slide.active {
+    opacity: 1;
+    pointer-events: all;
+    position: relative;
+}
+
+.slide-imagen {
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-info {
+    width: 40%;
+    background-color: var(--color-gris-oscuro);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.slide-info h3 {
+    font-size: 2.5rem;
+    color: var(--color-acento);
+    margin-bottom: 1rem;
+}
+
+.slide-info p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: var(--color-blanco);
+}
+
+.carrusel-controles {
+    margin-top: 20px;
+}
+
+.carrusel-controles button {
+    background: none;
+    border: 2px solid var(--color-rojo);
+    color: var(--color-rojo);
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.carrusel-controles button:hover {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+}
+
+/* SECCIÓN INTERACCIÓN Y PRUEBA SOCIAL */
+.section-interaccion {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    background-color: var(--color-gris-oscuro);
+}
+
+.interaccion-bloque {
+    width: 48%;
+    padding: 20px;
+    border: 1px solid var(--color-acento);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.interaccion-bloque h2 {
+    color: var(--color-blanco);
+    border-bottom: none;
+    font-size: 2.5rem;
+}
+
+/* SECCIÓN CONTACTO */
+.section-contacto {
+    background-color: var(--color-negro);
+}
+
+.contacto-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contacto-info {
+    text-align: left;
+    padding: 20px;
+    border-right: 2px solid var(--color-rojo);
+}
+
+.contacto-info p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    margin-right: 15px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.contacto-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 400px;
+    text-align: left;
+}
+
+.contacto-formulario input, .contacto-formulario textarea {
+    padding: 10px;
+    background-color: var(--color-gris-oscuro);
+    border: 1px solid var(--color-rojo);
+    color: var(--color-blanco);
+    font-size: 1rem;
+}
+
+.contacto-formulario textarea {
+    resize: vertical;
+}
+
+/* SECCIÓN BLOG/INFORMACIÓN */
+.section-blog {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    background-color: var(--color-gris-oscuro);
+}
+
+.blog-bloque {
+    width: 48%;
+    padding: 20px;
+    border: 1px solid var(--color-rojo);
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.blog-bloque h3 {
+    color: var(--color-acento);
+    font-size: 1.8rem;
+}
+
+/* FOOTER */
+.section-footer {
+    background-color: var(--color-negro);
+    padding: 40px 5%;
+    border-top: 5px solid var(--color-rojo);
+}
+
+.graffiti-frase {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+    color: var(--color-acento);
+    margin-bottom: 20px;
+}
+
+.footer-legal {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.footer-legal a {
+    color: #888;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .section-info, .section-interaccion, .section-blog, .contacto-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .info-bloque, .interaccion-bloque, .blog-bloque, .contacto-formulario {
+        width: 100%;
+    }
+
+    .carrusel-slide {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .slide-imagen, .slide-info {
+        width: 100%;
+        height: auto;
+    }
+}
