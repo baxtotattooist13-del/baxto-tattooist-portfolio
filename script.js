@@ -47,10 +47,9 @@ function showSlide(index) {
     const slides = document.querySelectorAll('.carrusel-slide');
     slides.forEach((slide, i) => {
         slide.classList.remove('active');
-        if (i === index) {
-            slide.classList.add('active');
-        }
+        slide.style.transform = `translateX(-${index * 100}%)`; // Mover todos los slides
     });
+    slides[index].classList.add('active');
 }
 
 function nextSlide() {
