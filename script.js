@@ -63,6 +63,7 @@ function prevSlide() {
 
 document.addEventListener('DOMContentLoaded', () => {
     renderCarrusel();
+    showSlide(currentSlide); // Asegurar que el primer slide se muestre
 
     document.querySelector('.prev-btn').addEventListener('click', prevSlide);
     document.querySelector('.next-btn').addEventListener('click', nextSlide);
